@@ -34,13 +34,14 @@ else
 }
 
 @code {
-    private Product[] products;
+    //private Product[] products;
+    private List<Product> products;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            products = await Http.GetFromJsonAsync<Product[]>("/Api/Functions/Product");
+            products = await Http.GetFromJsonAsync<List<Product>>("api/products");
         }
         catch (Exception ex)
         {
