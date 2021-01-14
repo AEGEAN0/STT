@@ -15,7 +15,7 @@ namespace Api
     public static class Functions
     {
         [FunctionName("Product")]
-        public static IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "fetchdata")] HttpRequest req, ILogger log)
+        public static IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route =null)] HttpRequest req, ILogger log)
         {
             var products = new List<Product>
     {
