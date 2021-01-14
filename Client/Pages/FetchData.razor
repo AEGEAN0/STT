@@ -41,7 +41,7 @@ else
     {
         try
         {
-            products = await Http.GetFromJsonAsync<List<Product>>("api/products");
+            products = await Http.GetFromJsonAsync<List<Product>>("api/fetchdata");
         }
         catch (Exception ex)
         {
