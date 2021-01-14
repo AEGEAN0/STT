@@ -1,8 +1,25 @@
 ﻿@page "/"
-pippo
+@inject HttpClient http
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+@S
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code {
+
+    private string S = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var S1 = await http.GetFromJsonAsync<string>("api/test");
+
+            S = S1.ToString();
+        }
+        catch (Exception ex)
+        {
+            S = ex.Message;
+        }
+    }
+}
